@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the btpanUiApp
  */
-angular.module('btpanUiApp')
+var btpanUiApp = angular.module('btpanUiApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -15,3 +15,16 @@ angular.module('btpanUiApp')
       'Karma'
     ];
   });
+
+
+btpanUiApp.controller('MainCtrl',function($scope,$http){
+$http.get('http://blog.sui.me:5000/jianzhimao').success(function(data){
+  $scope.results = data;
+});
+
+
+});
+
+$('.special.cards .image').dimmer({
+  on: 'hover'
+});
