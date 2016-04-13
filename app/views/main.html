@@ -4,7 +4,7 @@
   <div class="inputform">
 
     <form class="inputframe">
-      <input class="inputbox" type="text" ng-model="source1" placeholder="暂无数据" name="name" onkeyup=" if(event.keyCode==13) { getsource() } "/>
+      <input class="inputbox" type="text" ng-model="source1" placeholder="暂无数据" name="name" ng-onkeyup=" if(event.keyCode==13){getsource();} "/>
       <input class="inputbut" type="submit" name="button" value="获 取" ng-click="getsource()" />
       <span class="dataamount">{{amount}}</span>
     </form>

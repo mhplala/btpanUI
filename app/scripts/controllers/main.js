@@ -6,7 +6,7 @@
  * @description
  * # MainCtrl
  * Controller of the btpanUiApp
- */ 
+ */
 var btpanUiApp = angular.module('btpanUiApp')
   .controller('MainCtrl', function() {
     this.awesomeThings = [
