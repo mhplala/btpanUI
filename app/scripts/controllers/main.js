@@ -6,11 +6,7 @@
  * @description
  * # MainCtrl
  * Controller of the btpanUiApp
- */
-
-function getsource() {
-  source1 = document.getElementById("nn").value;
-};
+ */ 
 var btpanUiApp = angular.module('btpanUiApp')
   .controller('MainCtrl', function() {
     this.awesomeThings = [
