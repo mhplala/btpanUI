@@ -29,7 +29,6 @@ btpanUiApp.controller('MainCtrl', function($scope, $http) {
   $scope.amount = "总数";
   $scope.getsource = function() {
     $http.get(url + $scope.source1).success(function(data) {
-      console.log(data);
       if (data.length < 1) {
         alert("邀请码错误");
       } else {
