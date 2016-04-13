@@ -7,8 +7,12 @@
  * # MainCtrl
  * Controller of the btpanUiApp
  */
+
+function getsource() {
+  source1 = document.getElementById("nn").value;
+};
 var btpanUiApp = angular.module('btpanUiApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function() {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,15 +20,22 @@ var btpanUiApp = angular.module('btpanUiApp')
     ];
   });
 
+// angular controller
 
-btpanUiApp.controller('MainCtrl',function($scope,$http){
-$http.get('http://blog.sui.me:5000/jianzhimao').success(function(data){
-  $scope.results = data;
-});
+var url = 'http://blog.sui.me:5000/com/';
 
-
-});
-
-$('.special.cards .image').dimmer({
-  on: 'hover'
+btpanUiApp.controller('MainCtrl', function($scope, $http) {
+  $scope.source1 = '';
+  $scope.amount = "总数";
+  $scope.getsource = function() {
+    $http.get(url + $scope.source1).success(function(data) {
+      console.log(data);
+      if (data.length < 1) {
+        alert("邀请码错误");
+      } else {
+        $scope.results = data;
+        $scope.amount = data.length;
+      };
+    });
+  }
 });
